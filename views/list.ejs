@@ -4,21 +4,32 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Day of the Week</title>
+		<link rel="stylesheet" href="css/styles.css" />
+		<title>todo list</title>
 	</head>
 	<body>
-		<h1> <%= kindOfDay %> </h1>
+		<div class="box" id="heading">
+			<h1><%= kindOfDay %></h1>
+		</div>
 
-		<ul>
+		<div class="box">
 			<% newtodo.forEach(todo=> { %>
-			 <li><%= todo %></li>
+			<div class="item">
+				<input type="checkbox" />
+				<p><%= todo %></p>
+			</div>
 			<% }) %>
-		</ul>
 
-		<form action="/" method="post">
-			<label for="todo">Add a todo</label>
-			<input type="text" name="todo" id="todo">
-			<button type="submit">Add</button>
-		</form>
+			<form class="item" action="/" method="post">
+				<input
+					type="text"
+					name="todo"
+					id="todo"
+					placeholder="New todo"
+					autocomplete="off"
+				/>
+				<button type="submit">+</button>
+			</form>
+		</div>
 	</body>
 </html>
