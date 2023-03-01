@@ -1,25 +1,25 @@
 <%- include("header") -%>
-		<div class="box" id="heading">
-			<h1><%= listTitle %></h1>
-		</div>
+<div class="box" id="heading">
+	<h1><%= listTitle %></h1>
+</div>
 
-		<div class="box">
-			<% newtodo.forEach(todo=> { %>
-			<div class="item">
-				<input type="checkbox" />
-				<p><%= todo %></p>
-			</div>
-			<% }) %>
+<div class="box">
+	<% newtodo.forEach(todo=> { %>
+	<div class="item">
+		<input type="checkbox" />
+		<p><%= todo %></p>
+	</div>
+	<% }) %>
 
-			<form class="item" action="/" method="post">
-				<input
-					type="text"
-					name="todo"
-					id="todo"
-					placeholder="New todo"
-					autocomplete="off"
-				/>
-				<button type="submit" name="list" value= "<%= listTitle %>" >+</button>
-			</form>
-		</div>
+	<form class="item" action="/" method="post">
+		<input
+			type="text"
+			name="todo"
+			id="todo"
+			placeholder="New todo"
+			autocomplete="off"
+		/>
+		<button type="submit" name="list" value="<%= listTitle %>">+</button>
+	</form>
+</div>
 <%- include("footer") -%>
